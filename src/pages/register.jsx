@@ -60,7 +60,7 @@ const Register = () => {
         <h2 style={{ textAlign: "center" }}>Реєстрація</h2>
         <label htmlFor="name">
           <p style={{ fontWeight: "700" }}>
-            Ім'я <span style={{ color: "red" }}>*</span>
+            Ім`я <span style={{ color: "red" }}>*</span>
           </p>
         </label>
         <TextField

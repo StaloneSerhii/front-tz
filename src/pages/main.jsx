@@ -4,7 +4,7 @@ import { logOut } from "../redux/operations";
 const Main = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.auth.user);
-  console.log(state);
+
   const logOutBtn = () => {
     dispatch(logOut());
   };
