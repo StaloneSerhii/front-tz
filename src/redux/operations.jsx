@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-axios.defaults.baseURL = "http://localhost:3011/api";
+axios.defaults.baseURL = "https://nodejs-hw-goit-03-restapi.onrender.com/api";
 
 const token = {
   set(token) {
