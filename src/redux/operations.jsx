@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-axios.defaults.baseURL = "https://nodejs-hw-goit-03-restapi.onrender.com";
+axios.defaults.baseURL = "http://localhost:3011/api";
 
 const token = {
   set(token) {
@@ -27,12 +27,14 @@ export const register = createAsyncThunk(
 );
 
 export const logIn = createAsyncThunk("auth/login", async (credentials) => {
-  console.log(credentials);
   try {
     const { data } = await axios.post(`/auth/login`, credentials);
     token.set(data.token);
     return data;
   } catch (e) {
+    if (e.response.status === 401) {
+      return alert("Email не підтверджано!");
+    }
     console.log(e);
   }
 });

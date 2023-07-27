@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import Login from "./pages/login";
 import Register from "./pages/register";
-// import { PrivateRoute } from "./redux/privateRoute";
-// import Main from "./pages/main";
+import { PrivateRoute } from "./redux/privateRoute";
+import Main from "./pages/main";
+import { RestrictedRoute } from "./redux/restrikeRoute";
 
 function App() {
   return (
@@ -14,12 +15,20 @@ function App() {
       }}
     >
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        {/* <Route
+        <Route
+          path="/"
+          element={<RestrictedRoute redirectTo="/main" component={<Login />} />}
+        />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute redirectTo="/main" component={<Register />} />
+          }
+        />
+        <Route
           path="/main"
           element={<PrivateRoute redirectTo="/" component={<Main />} />}
-        /> */}
+        />
       </Routes>
     </div>
   );

@@ -1,9 +1,13 @@
 import { Button, TextField } from "@mui/material";
 import { useFormik } from "formik";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
+import { register } from "../redux/operations";
 
 const Register = () => {
+  const dispatch = useDispatch();
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -32,6 +36,13 @@ const Register = () => {
       if (values.password !== values.passwordPlus) {
         return alert("Паролі не співпадають");
       }
+
+      // Create a copy of the form values
+      const formValuesWithoutPasswordPlus = { ...values };
+      delete formValuesWithoutPasswordPlus.passwordPlus;
+
+      dispatch(register(formValuesWithoutPasswordPlus));
+
       alert("Перейдіть на вашу електрону пошту щоб підтвердити реєстрацію");
     },
   });

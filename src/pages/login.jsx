@@ -12,7 +12,6 @@ const Login = () => {
       password: "",
     },
     onSubmit: (values) => {
-      console.log(values);
       dispatch(logIn(values));
       values.preventDefault();
     },

@@ -23,7 +23,7 @@ const middleware = [
 const authPersistConfig = {
   key: "auth",
   storage,
-  whitelist: ["token"],
+  // whitelist: ["token", "isLoggedIn", "user"],
 };
 
 export const store = configureStore({
@@ -31,7 +31,7 @@ export const store = configureStore({
     auth: persistReducer(authPersistConfig, authSlice),
   },
   middleware,
-  //   devTools: process.env.NODE_ENV === "development",
+  devTools: process.env.NODE_ENV === "development",
 });
 
 export const persistor = persistStore(store);
