@@ -4,6 +4,7 @@ import Register from "./pages/register";
 import { PrivateRoute } from "./redux/privateRoute";
 import Main from "./pages/main";
 import { RestrictedRoute } from "./redux/restrikeRoute";
+import { lazy } from "react";
 const Login = lazy(() => import("./pages/login"));
 
 function App() {
