@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import Login from "./pages/login";
+// import Login from "./pages/login";
 import Register from "./pages/register";
 import { PrivateRoute } from "./redux/privateRoute";
 import Main from "./pages/main";
 import { RestrictedRoute } from "./redux/restrikeRoute";
+const Login = lazy(() => import("./pages/login"));
 
 function App() {
   return (

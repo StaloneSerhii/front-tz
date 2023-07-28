@@ -7,7 +7,7 @@ import { store } from "./redux/store.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <BrowserRouter basename="/front-tz">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </Provider>
