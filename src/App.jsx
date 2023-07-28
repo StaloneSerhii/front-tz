@@ -28,6 +28,7 @@ function App() {
           path="/main"
           element={<PrivateRoute redirectTo="/" component={<Main />} />}
         /> */}
+        <Route path="*" element={<div>404</div>} />
       </Routes>
     </div>
   );
