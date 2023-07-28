@@ -5,6 +5,7 @@ import { RestrictedRoute } from "./redux/restrikeRoute";
 // import Main from "./pages/main";
 // import Login from "./pages/login";
 import { lazy } from "react";
+
 const Login = lazy(() => import("./pages/login"));
 const Register = lazy(() => import("./pages/register"));
 const Main = lazy(() => import("./pages/main"));
