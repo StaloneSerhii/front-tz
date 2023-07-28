@@ -8,7 +8,7 @@ import { store } from "./redux/store.jsx";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename="front-tz">
       <App />
     </BrowserRouter>
   </Provider>
