@@ -14,9 +14,9 @@ function App() {
         width: "100%",
       }}
     >
-      {/* <Routes> */}
-      <Login />
-      {/* <Route
+      <Routes>
+        <Route path="/" element={<Login />} />
+        {/* <Route
           path="/register"
           element={
             <RestrictedRoute redirectTo="/main" component={<Register />} />
@@ -26,7 +26,7 @@ function App() {
           path="/main"
           element={<PrivateRoute redirectTo="/" component={<Main />} />}
         /> */}
-      {/* </Routes> */}
+      </Routes>
     </div>
   );
 }
