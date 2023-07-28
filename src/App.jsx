@@ -1,31 +1,33 @@
-import { useState } from "react";
-
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Login from "./pages/login";
+import Register from "./pages/register";
+import { PrivateRoute } from "./redux/privateRoute";
+import Main from "./pages/main";
+import { RestrictedRoute } from "./redux/restrikeRoute";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+      }}
+    >
+      {/* <Routes> */}
+      <Login />
+      {/* <Route
+          path="/register"
+          element={
+            <RestrictedRoute redirectTo="/main" component={<Register />} />
+          }
+        />
+        <Route
+          path="/main"
+          element={<PrivateRoute redirectTo="/" component={<Main />} />}
+        /> */}
+      {/* </Routes> */}
+    </div>
   );
 }
 
