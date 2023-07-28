@@ -24,11 +24,11 @@ function App() {
           element={<RestrictedRoute redirectTo="/main" component={Login} />}
         />
         <Route
-          path="/register"
+          path="register"
           element={<RestrictedRoute redirectTo="/main" component={Register} />}
         />
         <Route
-          path="/main"
+          path="main"
           element={<PrivateRoute redirectTo="/" component={Main} />}
         />
         <Route path="*" element={<div>404</div>} />
