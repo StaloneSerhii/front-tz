@@ -21,17 +21,15 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<RestrictedRoute redirectTo="/main" component={<Login />} />}
+          element={<RestrictedRoute redirectTo="/main" component={Login} />}
         />
         <Route
           path="/register"
-          element={
-            <RestrictedRoute redirectTo="/main" component={<Register />} />
-          }
+          element={<RestrictedRoute redirectTo="/main" component={Register} />}
         />
         <Route
           path="/main"
-          element={<PrivateRoute redirectTo="/" component={<Main />} />}
+          element={<PrivateRoute redirectTo="/" component={Main} />}
         />
         <Route path="*" element={<div>404</div>} />
       </Routes>
