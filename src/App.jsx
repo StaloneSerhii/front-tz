@@ -1,11 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-// import Login from "./pages/login";
-import Register from "./pages/register";
 import { PrivateRoute } from "./redux/privateRoute";
-import Main from "./pages/main";
 import { RestrictedRoute } from "./redux/restrikeRoute";
 import { lazy } from "react";
 const Login = lazy(() => import("./pages/login"));
+const Register = lazy(() => import("./pages/register"));
+const Main = lazy(() => import("./pages/main"));
 
 function App() {
   return (
@@ -18,7 +17,7 @@ function App() {
     >
       <Routes>
         <Route path="/" element={<Login />} />
-        {/* <Route
+        <Route
           path="/register"
           element={
             <RestrictedRoute redirectTo="/main" component={<Register />} />
@@ -27,7 +26,7 @@ function App() {
         <Route
           path="/main"
           element={<PrivateRoute redirectTo="/" component={<Main />} />}
-        /> */}
+        />
         <Route path="*" element={<div>404</div>} />
       </Routes>
     </div>
